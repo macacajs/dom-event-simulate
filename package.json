@@ -1,12 +1,12 @@
 {
   "name": "dom-event-simulate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "dom event simulate",
   "keywords": [
     "dom",
     "event"
   ],
-  "main": "index.js",
+  "main": "lib/dom-event-simulate.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/macacajs/dom-event-simulate.git"
