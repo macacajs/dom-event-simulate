@@ -49,6 +49,10 @@ domEvent.domEvent(dom, 'mouseup', {
 });
 ```
 
+## Use with macaca-wd
+
+see: https://macacajs.github.io/macaca-wd/#domEvent
+
 ## Support Events
 
 | type | name | args |
