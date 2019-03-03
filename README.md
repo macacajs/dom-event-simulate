@@ -8,10 +8,10 @@
 
 [npm-image]: https://img.shields.io/npm/v/dom-event-simulate.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/dom-event-simulate
-[travis-image]: https://img.shields.io/travis/xudafeng/dom-event-simulate.svg?style=flat-square
-[travis-url]: https://travis-ci.org/xudafeng/dom-event-simulate
-[coveralls-image]: https://img.shields.io/coveralls/xudafeng/dom-event-simulate.svg?style=flat-square
-[coveralls-url]: https://coveralls.io/r/xudafeng/dom-event-simulate?branch=master
+[travis-image]: https://img.shields.io/travis/macacajs/dom-event-simulate.svg?style=flat-square
+[travis-url]: https://travis-ci.org/macacajs/dom-event-simulate
+[coveralls-image]: https://img.shields.io/coveralls/macacajs/dom-event-simulate.svg?style=flat-square
+[coveralls-url]: https://coveralls.io/r/macacajs/dom-event-simulate?branch=master
 [node-image]: https://img.shields.io/badge/node.js-%3E=_8-green.svg?style=flat-square
 [node-url]: http://nodejs.org/download/
 [download-image]: https://img.shields.io/npm/dm/dom-event-simulate.svg?style=flat-square

@@ -1,6 +1,6 @@
 {
   "name": "dom-event-simulate",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "dom event simulate",
   "keywords": [
     "dom",
@@ -9,7 +9,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/xudafeng/dom-event-simulate.git"
+    "url": "git://github.com/macacajs/dom-event-simulate.git"
   },
   "dependencies": {
   },
