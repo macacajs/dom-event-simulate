@@ -13,16 +13,18 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "chai": "^4.2.0",
     "eslint": "*",
     "eslint-plugin-mocha": "^4.11.0",
     "git-contributor": "*",
+    "gulp": "3",
+    "gulp-uitest": "^1.0.1",
     "husky": "*",
-    "mocha": "^6.0.2",
-    "nyc": "*",
+    "macaca-reporter": "^1.3.4",
     "uitest": "^3.0.1"
   },
   "scripts": {
-    "test": "nyc --reporter=lcov --reporter=text mocha",
+    "test": "gulp test",
     "lint": "eslint . --fix",
     "contributor": "git-contributor"
   },
