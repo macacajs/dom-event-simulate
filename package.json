@@ -9,17 +9,17 @@
   "main": "lib/dom-event-simulate.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/macacajs/dom-event-simulate.git"
+    "url": "git@github.com:macacajs/dom-event-simulate.git"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "eslint": "*",
     "eslint-plugin-mocha": "^4.11.0",
     "git-contributor": "*",
     "husky": "*",
-    "mocha": "*",
-    "nyc": "*"
+    "mocha": "^6.0.2",
+    "nyc": "*",
+    "uitest": "^3.0.1"
   },
   "scripts": {
     "test": "nyc --reporter=lcov --reporter=text mocha",
@@ -28,7 +28,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint"
+      "pre-commit": "npm run lint"
     }
   },
   "license": "MIT"
