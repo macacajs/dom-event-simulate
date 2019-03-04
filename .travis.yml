@@ -2,8 +2,15 @@ language: node_js
 sudo: false
 node_js:
   - 8
-script:
+addons:
+  apt:
+    packages:
+      - xvfb
+install:
+  - export DISPLAY=':99.0'
+  - Xvfb :99 -screen 0 1366x768x24 > /dev/null 2>&1 &
   - npm i
+script:
   - npm run lint
   - npm run test
 after_script:

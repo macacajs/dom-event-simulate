@@ -5,6 +5,10 @@
     "es6": true,
     "mocha": true
   },
+  "globals": {
+    "define": true,
+    "Windows": true
+  },
   "plugins": [
     "mocha"
   ],
@@ -117,7 +121,7 @@
     "no-sparse-arrays": 2,
     "no-sync": 0,
     "no-ternary": 0,
-    "no-throw-literal": 2,
+    "no-throw-literal": 0,
     "no-trailing-spaces": 2,
     "no-undef": 2,
     "no-undef-init": 2,
