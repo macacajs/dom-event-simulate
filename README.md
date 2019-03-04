@@ -17,7 +17,19 @@
 [download-image]: https://img.shields.io/npm/dm/dom-event-simulate.svg?style=flat-square
 [download-url]: https://npmjs.org/package/dom-event-simulate
 
-> dom event simulate
+> simulate user interaction with DOM events.
+
+<!-- GITCONTRIBUTOR_START -->
+
+## Contributors
+
+|[<img src="https://avatars1.githubusercontent.com/u/1011681?v=4" width="100px;"/><br/><sub><b>xudafeng</b></sub>](https://github.com/xudafeng)<br/>|
+| :---: |
+
+
+This project follows the git-contributor [spec](https://github.com/xudafeng/git-contributor), auto updated at `Mon Mar 04 2019 13:46:43 GMT+0800`.
+
+<!-- GITCONTRIBUTOR_END -->
 
 ## Installment
 
@@ -94,4 +106,3 @@ see: https://macacajs.github.io/macaca-wd/#domEvent
 ## License
 
 The MIT License (MIT)
-
