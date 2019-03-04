@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const uitest = require('gulp-uitest');
 const render = require('macaca-reporter/lib/render');
+const coverage = require('macaca-reporter/lib/coverage');
 
 // test
 gulp.task('test', [], function() {
@@ -16,9 +17,9 @@ gulp.task('test', [], function() {
 });
 
 gulp.task('test:reporter', ['test'], function() {
+  coverage(() => {});
   const data = require('./reports/json-final');
   render(data);
-  console.log('render completed');
 });
 
 gulp.task('default', ['test']);
