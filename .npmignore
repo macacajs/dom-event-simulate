@@ -3,6 +3,7 @@ node_modules
 .eslintrc
 .eslintignore
 .nyc_output
+coverage
 reports
 *.gz
 *.sw*
