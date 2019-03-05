@@ -8,20 +8,25 @@ describe('base', () => {
   });
   after(() => {});
 
-  it('1', async () => {
-    console.log('1');
-    await macacaHelper.sleep(100);
-  });
-
   it('click', async () => {
-    container = document.querySelector('body');
-    domEvent(container, 'click', {});
+    testElm = document.getElementById('testClick');
+    domEvent(testElm, 'click', {});
+    valueElm = document.getElementById('testClickValue');
+    macacaHelper.assert(
+      valueElm.innerHTML === '1',
+      'click should be triggered'
+    );
     await macacaHelper.sleep(100);
   });
 
   it('click when target is array', async () => {
-    container = document.querySelector('body');
-    domEvent([container], 'click', {});
+    testElm = document.getElementById('testClick');
+    domEvent([testElm], 'click', {});
+    valueElm = document.getElementById('testClickValue');
+    macacaHelper.assert(
+      valueElm.innerHTML === '2',
+      'click should be triggered'
+    );
     await macacaHelper.sleep(100);
   });
 
@@ -30,7 +35,11 @@ describe('base', () => {
     try {
       domEvent(null, 'click', {});
     } catch (e) {
-      // do nothing
+      valueElm = document.getElementById('testClickValue');
+      macacaHelper.assert(
+        valueElm.innerHTML === '2',
+        'click should not be triggered'
+      );
     }
     await macacaHelper.sleep(100);
   });
@@ -42,24 +51,6 @@ describe('base', () => {
     } catch (e) {
       // do nothing
     }
-    await macacaHelper.sleep(100);
-  });
-
-  it('mouseout', async () => {
-    container = document.querySelector('body');
-    testElm = document.getElementById('test');
-    domEvent(container, 'mouseout', {
-      relatedTarget: testElm
-    });
-    await macacaHelper.sleep(100);
-  });
-
-  it('mouseover', async () => {
-    container = document.querySelector('body');
-    testElm = document.getElementById('test');
-    domEvent(container, 'mouseover', {
-      relatedTarget: testElm
-    });
     await macacaHelper.sleep(100);
   });
 });
