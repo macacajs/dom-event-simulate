@@ -8,6 +8,9 @@
 </head>
 <body>
   <div id="mocha"></div>
+  <div id="test"></div>
+  <div id="testClick"></div>
+  <div id="testClickValue">0</div>
   <script src="../node_modules/chai/chai.js"></script>
   <script src="../node_modules/uitest/mocha.js"></script>
   <script src="../node_modules/uitest/uitest-mocha-shim.js"></script>
@@ -20,6 +23,10 @@
       timeout: 60 * 1000,
       slow: 3 * 1000
     });
+    document.getElementById('testClick').onclick = () => {
+      const currentValue = +document.getElementById('testClickValue').innerHTML;
+      document.getElementById('testClickValue').innerHTML = currentValue + 1;
+    };
   </script>
   <script src="./helper.js"></script>
   <script src="./index.test.js"></script>

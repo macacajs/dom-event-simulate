@@ -1,5 +1,5 @@
 const { macacaHelper } = window;
-const { domEvent } = window._macaca_simulate; 
+const { domEvent } = window._macaca_simulate;
 
 describe('base', () => {
   let container;
@@ -8,15 +8,49 @@ describe('base', () => {
   });
   after(() => {});
 
-  it('1', async () => {
-    console.log('1');
-    await macacaHelper.sleep(1000);
+  it('click', async () => {
+    testElm = document.getElementById('testClick');
+    domEvent(testElm, 'click', {});
+    valueElm = document.getElementById('testClickValue');
+    macacaHelper.assert(
+      valueElm.innerHTML === '1',
+      'click should be triggered'
+    );
+    await macacaHelper.sleep(100);
   });
 
-  it('2', async () => {
+  it('click when target is array', async () => {
+    testElm = document.getElementById('testClick');
+    domEvent([testElm], 'click', {});
+    valueElm = document.getElementById('testClickValue');
+    macacaHelper.assert(
+      valueElm.innerHTML === '2',
+      'click should be triggered'
+    );
+    await macacaHelper.sleep(100);
+  });
+
+  it('click when target is null', async () => {
     container = document.querySelector('body');
-    domEvent(container, 'click', {
-    });
-    await macacaHelper.sleep(1000);
+    try {
+      domEvent(null, 'click', {});
+    } catch (e) {
+      valueElm = document.getElementById('testClickValue');
+      macacaHelper.assert(
+        valueElm.innerHTML === '2',
+        'click should not be triggered'
+      );
+    }
+    await macacaHelper.sleep(100);
+  });
+
+  it('random', async () => {
+    container = document.querySelector('body');
+    try {
+      domEvent(container, 'random', {});
+    } catch (e) {
+      // do nothing
+    }
+    await macacaHelper.sleep(100);
   });
 });
