@@ -53,4 +53,11 @@ describe('base', () => {
     }
     await macacaHelper.sleep(100);
   });
+
+  it('3', async () => {
+    container = document.querySelector('body');
+    domEvent(container, 'touchstart', {
+    });
+    await macacaHelper.sleep(1000);
+  });
 });
