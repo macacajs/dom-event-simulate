@@ -27,7 +27,7 @@
 | :---: | :---: |
 
 
-This project follows the git-contributor [spec](https://github.com/xudafeng/git-contributor), auto updated at `Mon Mar 04 2019 23:52:10 GMT+0800`.
+This project follows the git-contributor [spec](https://github.com/xudafeng/git-contributor), auto updated at `Wed Mar 06 2019 22:19:21 GMT+0800`.
 
 <!-- GITCONTRIBUTOR_END -->
 
@@ -69,39 +69,39 @@ see: https://macacajs.github.io/macaca-wd/#domEvent
 
 | type | name | args |
 | --- | --- | --- |
-| mouse events | click | |
-| mouse events | dblclick | |
-| mouse events | mouseover | |
-| mouse events | mouseout | |
-| mouse events | mouseenter | |
-| mouse events | mouseleave | |
-| mouse events | mousedown | |
-| mouse events | mouseup | |
-| mouse events | mousemove | |
-| key events | keydown | |
-| key events | keyup | |
-| key events | keypress | |
-| ui events | submit | |
-| ui events | blur | |
-| ui events | change | |
-| ui events | focus | |
-| ui events | resize | |
-| ui events | scroll | |
-| ui events | select | |
-| bubble events | scroll | |
-| bubble events | resize | |
-| bubble events | reset | |
-| bubble events | change | |
-| bubble events | select | |
-| bubble events | error | |
-| bubble events | abort | |
-| touch events | touchstart | |
-| touch events | touchmove | |
-| touch events | touchend | |
-| touch events | touchcancel | |
-| gesture events | gesturestart | |
-| gesture events | gesturechange | |
-| gesture events | gestureend | |
+| mouseEvents | click | |
+| mouseEvents | dblclick | |
+| mouseEvents | mouseover | |
+| mouseEvents | mouseout | |
+| mouseEvents | mouseenter | |
+| mouseEvents | mouseleave | |
+| mouseEvents | mousedown | |
+| mouseEvents | mouseup | |
+| mouseEvents | mousemove | |
+| keyboardEvent | keydown | |
+| keyboardEvent | keyup | |
+| keyboardEvent | keypress | |
+| UIEvents | submit | |
+| UIEvents | blur | |
+| UIEvents | change | |
+| UIEvents | focus | |
+| UIEvents | resize | |
+| UIEvents | scroll | |
+| UIEvents | select | |
+| bubbleEvents | scroll | |
+| bubbleEvents | resize | |
+| bubbleEvents | reset | |
+| bubbleEvents | change | |
+| bubbleEvents | select | |
+| bubbleEvents | error | |
+| bubbleEvents | abort | |
+| TouchEvent | touchstart | |
+| TouchEvent | touchmove | |
+| TouchEvent | touchend | |
+| TouchEvent | touchcancel | |
+| GestureEvent | gesturestart | |
+| GestureEvent | gesturechange | |
+| GestureEvent | gestureend | |
 
 ## License
 
