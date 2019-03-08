@@ -1,6 +1,6 @@
 {
   "name": "dom-event-simulate",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "simulate user interaction with DOM events.",
   "keywords": [
     "dom",
