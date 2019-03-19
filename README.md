@@ -67,6 +67,29 @@ domEvent.domEvent(dom, 'mouseup', {
 });
 ```
 
+```javascript
+var element = document.querySelector('#input');
+
+element.addEventListener('change', function(e) {
+  console.log(e.target.files);
+}, false);
+
+domEvent(element, 'change', {
+  data: {
+    target: {
+      files: [
+        {
+          file: 'file1.png',
+        },
+        {
+          file: 'file2.jpg',
+        }
+      ],
+    },
+  }
+});
+```
+
 ## Use with macaca-wd
 
 see: https://macacajs.github.io/macaca-wd/#domEvent
