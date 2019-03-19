@@ -37,6 +37,12 @@ This project follows the git-contributor [spec](https://github.com/xudafeng/git-
 $ npm i dom-event-simulate --save-dev
 ```
 
+## CDN
+
+```
+https://unpkg.com/dom-event-simulate@latest/lib/dom-event-simulate.js
+```
+
 ## Usage
 
 ```javascript
