@@ -1,5 +1,6 @@
 const { macacaHelper } = window;
 const { domEvent } = window._macaca_simulate;
+const { assert } = macacaHelper;
 
 describe('base', () => {
   let container;
@@ -54,10 +55,32 @@ describe('base', () => {
     await macacaHelper.sleep(100);
   });
 
-  it('3', async () => {
+  it('touchstart', async () => {
     container = document.querySelector('body');
     domEvent(container, 'touchstart', {
     });
     await macacaHelper.sleep(1000);
+  });
+
+  it('mock input type file', async () => {
+    const element = document.querySelector('#test-input');
+    element.addEventListener('change', e => {
+      assert.equal(e.target.files.length, 2);
+    }, false);
+
+    domEvent(element, 'change', {
+      data: {
+        target: {
+          files: [
+            {
+              file: 'file1.png',
+            },
+            {
+              file: 'file2.jpg',
+            }
+          ],
+        },
+      }
+    });
   });
 });
