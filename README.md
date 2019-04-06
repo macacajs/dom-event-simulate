@@ -114,6 +114,7 @@ see: https://macacajs.github.io/macaca-wd/#domEvent
 | mouseEvents | drag | |
 | mouseEvents | drop | |
 | mouseEvents | dragend | |
+| mouseEvents | wheel | |
 | keyboardEvent | keydown | |
 | keyboardEvent | keyup | |
 | keyboardEvent | keypress | |
