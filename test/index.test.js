@@ -4,49 +4,50 @@ const { assert } = macacaHelper;
 
 describe('base', () => {
   let container;
+  let valueToChange;
   beforeEach(() => {
+    valueToChange = null;
     container = document.querySelector('#mocha');
   });
   after(() => {});
 
   it('click', async () => {
-    testElm = document.getElementById('testClick');
-    domEvent(testElm, 'click', {});
-    valueElm = document.getElementById('testClickValue');
-    macacaHelper.assert(
-      valueElm.innerHTML === '1',
-      'click should be triggered'
-    );
+    container.onclick = () => {
+      valueToChange = 'click';
+    };
+    domEvent(container, 'click', {});
+    macacaHelper.assert(valueToChange === 'click', 'click should be triggered');
     await macacaHelper.sleep(100);
   });
 
   it('click when target is array', async () => {
-    testElm = document.getElementById('testClick');
-    domEvent([testElm], 'click', {});
-    valueElm = document.getElementById('testClickValue');
+    container.onclick = () => {
+      valueToChange = 'click array';
+    };
+    domEvent([container], 'click', {});
     macacaHelper.assert(
-      valueElm.innerHTML === '2',
-      'click should be triggered'
+      valueToChange === 'click array',
+      'click should be triggered',
     );
     await macacaHelper.sleep(100);
   });
 
   it('click when target is null', async () => {
-    container = document.querySelector('body');
+    container.onclick = () => {
+      valueToChange = 'click null';
+    };
     try {
       domEvent(null, 'click', {});
     } catch (e) {
-      valueElm = document.getElementById('testClickValue');
       macacaHelper.assert(
-        valueElm.innerHTML === '2',
-        'click should not be triggered'
+        valueToChange === null,
+        'click should not be triggered',
       );
     }
     await macacaHelper.sleep(100);
   });
 
   it('random', async () => {
-    container = document.querySelector('body');
     try {
       domEvent(container, 'random', {});
     } catch (e) {
@@ -56,17 +57,57 @@ describe('base', () => {
   });
 
   it('touchstart', async () => {
-    container = document.querySelector('body');
-    domEvent(container, 'touchstart', {
+    container.ontouchstart = () => {
+      valueToChange = 'touchstart';
+    };
+    domEvent(container, 'touchstart', {});
+    // https://github.com/electron/electron/issues/8725
+    // macacaHelper.assert(
+    //   valueToChange === 'touchstart',
+    //   'touchstart should be triggered'
+    // );
+    await macacaHelper.sleep(100);
+  });
+
+  const keyTests = [
+    {
+      event: 'keyup',
+      eventHandler: 'onkeyup',
+    },
+    {
+      event: 'keydown',
+      eventHandler: 'onkeydown',
+    },
+    {
+      event: 'keypress',
+      eventHandler: 'onkeypress',
+    },
+  ];
+
+  keyTests.forEach(test => {
+    const { event, eventHandler } = test;
+    it(`handles ${event} event`, async () => {
+      container[eventHandler] = () => {
+        valueToChange = event;
+      };
+      domEvent(container, event, {});
+      macacaHelper.assert(
+        valueToChange === event,
+        `${event} should be triggered`,
+      );
+      await macacaHelper.sleep(100);
     });
-    await macacaHelper.sleep(1000);
   });
 
   it('mock input type file', async () => {
     const element = document.querySelector('#test-input');
-    element.addEventListener('change', e => {
-      assert.equal(e.target.files.length, 2);
-    }, false);
+    element.addEventListener(
+      'change',
+      e => {
+        assert.equal(e.target.files.length, 2);
+      },
+      false,
+    );
 
     domEvent(element, 'change', {
       data: {
@@ -77,10 +118,10 @@ describe('base', () => {
             },
             {
               file: 'file2.jpg',
-            }
+            },
           ],
         },
-      }
+      },
     });
   });
 });
