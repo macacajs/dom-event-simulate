@@ -27,7 +27,7 @@ describe('base', () => {
     domEvent([container], 'click', {});
     macacaHelper.assert(
       valueToChange === 'click array',
-      'click should be triggered'
+      'click should be triggered',
     );
     await macacaHelper.sleep(100);
   });
@@ -41,7 +41,7 @@ describe('base', () => {
     } catch (e) {
       macacaHelper.assert(
         valueToChange === null,
-        'click should not be triggered'
+        'click should not be triggered',
       );
     }
     await macacaHelper.sleep(100);
@@ -69,22 +69,23 @@ describe('base', () => {
     await macacaHelper.sleep(100);
   });
 
-
   const keyTests = [
     {
       event: 'keyup',
-      eventHandler: 'onkeyup'
-    },{
-      event: 'keydown',
-      eventHandler: 'onkeydown'
-    },{
-      event: 'keypress',
-      eventHandler: 'onkeypress'
+      eventHandler: 'onkeyup',
     },
-  ]
+    {
+      event: 'keydown',
+      eventHandler: 'onkeydown',
+    },
+    {
+      event: 'keypress',
+      eventHandler: 'onkeypress',
+    },
+  ];
 
-  keyTests.forEach((test) => {
-    const {event, eventHandler} = test;
+  keyTests.forEach(test => {
+    const { event, eventHandler } = test;
     it(`handles ${event} event`, async () => {
       container[eventHandler] = () => {
         valueToChange = event;
@@ -92,11 +93,11 @@ describe('base', () => {
       domEvent(container, event, {});
       macacaHelper.assert(
         valueToChange === event,
-        `${event} should be triggered`
+        `${event} should be triggered`,
       );
       await macacaHelper.sleep(100);
     });
-  })
+  });
 
   it('mock input type file', async () => {
     const element = document.querySelector('#test-input');
@@ -105,7 +106,7 @@ describe('base', () => {
       e => {
         assert.equal(e.target.files.length, 2);
       },
-      false
+      false,
     );
 
     domEvent(element, 'change', {
@@ -113,14 +114,14 @@ describe('base', () => {
         target: {
           files: [
             {
-              file: 'file1.png'
+              file: 'file1.png',
             },
             {
-              file: 'file2.jpg'
-            }
-          ]
-        }
-      }
+              file: 'file2.jpg',
+            },
+          ],
+        },
+      },
     });
   });
 });
