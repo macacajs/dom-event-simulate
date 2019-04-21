@@ -66,8 +66,37 @@ describe('base', () => {
     //   valueToChange === 'touchstart',
     //   'touchstart should be triggered'
     // );
-    await macacaHelper.sleep(1000);
+    await macacaHelper.sleep(100);
   });
+
+
+  const keyTests = [
+    {
+      event: 'keyup',
+      eventHandler: 'onkeyup'
+    },{
+      event: 'keydown',
+      eventHandler: 'onkeydown'
+    },{
+      event: 'keypress',
+      eventHandler: 'onkeypress'
+    },
+  ]
+
+  keyTests.forEach((test) => {
+    const {event, eventHandler} = test;
+    it(`handles ${event} event`, async () => {
+      container[eventHandler] = () => {
+        valueToChange = event;
+      };
+      domEvent(container, event, {});
+      macacaHelper.assert(
+        valueToChange === event,
+        `${event} should be triggered`
+      );
+      await macacaHelper.sleep(100);
+    });
+  })
 
   it('mock input type file', async () => {
     const element = document.querySelector('#test-input');
