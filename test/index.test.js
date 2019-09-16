@@ -99,6 +99,20 @@ describe('base', () => {
     });
   });
 
+  it('mock wheel scroll on element', async () => {
+    const element = document.createElement('div');
+    element.style.width = '100px';
+    element.style.height = '200px';
+    element.style.overflow = 'auto';
+    const childNode = document.createElement('div');
+    childNode.style.width = '100px';
+    childNode.style.height = '400px';
+    element.appendChild(childNode);
+    container.appendChild(element);
+    domEvent(element, 'wheel', { deltaX: 0, deltaY: 200 });
+    assert.equal(element.scrollTop, 200);
+  });
+
   it('mock input type file', async () => {
     const element = document.querySelector('#test-input');
     element.addEventListener(
