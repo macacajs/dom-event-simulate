@@ -110,6 +110,8 @@ describe('base', () => {
     element.appendChild(childNode);
     container.appendChild(element);
     domEvent(element, 'wheel', { deltaX: 0, deltaY: 200 });
+    assert.equal(element.scrollTop, 0);
+    domEvent(element, 'wheel', { deltaX: 0, deltaY: 200, elementScroll: true });
     assert.equal(element.scrollTop, 200);
   });
 
