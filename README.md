@@ -48,20 +48,20 @@ https://unpkg.com/dom-event-simulate@latest/lib/dom-event-simulate.js
 ```javascript
 const { domEvent } = require('dom-event-simulate');
 // input @
-domEvent.domEvent(element, 'keydown', {
+domEvent(element, 'keydown', {
   keyCode: 50,
   key: '@',
 });
 // start a drag
-domEvent.domEvent(dom, 'mousedown', {
+domEvent(dom, 'mousedown', {
   clientX: point.x,
   clientY: point.y,
 });
-domEvent.domEvent(dom, 'mousemove', {
+domEvent(dom, 'mousemove', {
   clientX: point.x + 10,
   clientY: point.y + 10,
 });
-domEvent.domEvent(dom, 'mouseup', {
+domEvent(dom, 'mouseup', {
   clientX: point.x + 10,
   clientY: point.y + 10,
 });
