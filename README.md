@@ -140,6 +140,18 @@ see: https://macacajs.github.io/macaca-wd/#domEvent
 | GestureEvent | gesturechange | |
 | GestureEvent | gestureend | |
 
+## Helper Methods
+
+```javascript
+const { helper: eventHelper } = require('dom-event-simulate');
+
+// Type content to input element.
+eventHelper.elementInput
+
+// Type content to a contentEditable element.
+eventHelper.formInput
+```
+
 ## License
 
 The MIT License (MIT)
