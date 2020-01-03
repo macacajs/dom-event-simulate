@@ -1,10 +1,11 @@
+'use strict';
+
 const gulp = require('gulp');
 const uitest = require('gulp-uitest');
 const render = require('macaca-reporter/lib/render');
 const coverage = require('macaca-reporter/lib/coverage');
 
-// test
-gulp.task('test', [], function() {
+gulp.task('test', () => {
   return gulp
     .src('test/index.html')
     .pipe(uitest({
@@ -16,10 +17,13 @@ gulp.task('test', [], function() {
     }));
 });
 
-gulp.task('test:reporter', ['test'], function() {
+gulp.task('reporter', done => {
   coverage(() => {});
   const data = require('./reports/json-final');
   render(data);
+  done();
 });
 
-gulp.task('default', ['test']);
+gulp.task('test:reporter', gulp.series('test', 'reporter'));
+
+gulp.task('default', gulp.series('test'));
