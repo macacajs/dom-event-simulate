@@ -11,7 +11,7 @@ describe('test/base.test.js', () => {
       container = document.querySelector('#mocha');
     });
     after(() => {});
-  
+
     it('click', async () => {
       container.onclick = () => {
         valueToChange = 'click';
@@ -20,7 +20,7 @@ describe('test/base.test.js', () => {
       macacaHelper.assert(valueToChange === 'click', 'click should be triggered');
       await macacaHelper.sleep(100);
     });
-  
+
     it('click when target is array', async () => {
       container.onclick = () => {
         valueToChange = 'click array';
@@ -32,7 +32,7 @@ describe('test/base.test.js', () => {
       );
       await macacaHelper.sleep(100);
     });
-  
+
     it('click when target is null', async () => {
       container.onclick = () => {
         valueToChange = 'click null';
@@ -47,7 +47,7 @@ describe('test/base.test.js', () => {
       }
       await macacaHelper.sleep(100);
     });
-  
+
     it('random', async () => {
       try {
         domEvent(container, 'random', {});
@@ -56,7 +56,7 @@ describe('test/base.test.js', () => {
       }
       await macacaHelper.sleep(100);
     });
-  
+
     it('touchstart', async () => {
       container.ontouchstart = () => {
         valueToChange = 'touchstart';
@@ -69,7 +69,7 @@ describe('test/base.test.js', () => {
       // );
       await macacaHelper.sleep(100);
     });
-  
+
     const keyTests = [
       {
         event: 'keyup',
@@ -84,7 +84,7 @@ describe('test/base.test.js', () => {
         eventHandler: 'onkeypress',
       },
     ];
-  
+
     keyTests.forEach(test => {
       const { event, eventHandler } = test;
       it(`handles ${event} event`, async () => {
@@ -99,7 +99,14 @@ describe('test/base.test.js', () => {
         await macacaHelper.sleep(100);
       });
     });
-  
+
+    it('should be able to simulate KeyboardEvent.key', () => {
+      let pressedKey;
+      container.onkeyup = e => pressedKey = e.key;
+      domEvent(container, 'keyup', { key: 'a' });
+      macacaHelper.assert(pressedKey === 'a', 'a should be pressed');
+    });
+
     it('mock wheel scroll on element', async () => {
       const element = document.createElement('div');
       element.style.width = '100px';
@@ -115,7 +122,7 @@ describe('test/base.test.js', () => {
       domEvent(element, 'wheel', { deltaX: 0, deltaY: 200, elementScroll: true });
       assert.equal(element.scrollTop, 200);
     });
-  
+
     it('mock input type file', async () => {
       const element = document.querySelector('#test-input');
       element.addEventListener(
@@ -125,7 +132,7 @@ describe('test/base.test.js', () => {
         },
         false,
       );
-  
+
       domEvent(element, 'change', {
         data: {
           target: {
