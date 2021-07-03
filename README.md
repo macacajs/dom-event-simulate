@@ -7,17 +7,17 @@
 [![node version][node-image]][node-url]
 [![npm download][download-image]][download-url]
 
-[npm-image]: https://img.shields.io/npm/v/dom-event-simulate.svg?style=flat-square
+[npm-image]: https://img.shields.io/npm/v/dom-event-simulate.svg
 [npm-url]: https://npmjs.org/package/dom-event-simulate
 [quality-image]: https://packagequality.com/shield/dom-event-simulate.svg
 [quality-url]: https://packagequality.com/#?package=dom-event-simulate
-[travis-image]: https://img.shields.io/travis/macacajs/dom-event-simulate.svg?style=flat-square
+[travis-image]: https://img.shields.io/travis/macacajs/dom-event-simulate.svg
 [travis-url]: https://travis-ci.org/macacajs/dom-event-simulate
-[coveralls-image]: https://img.shields.io/coveralls/macacajs/dom-event-simulate.svg?style=flat-square
+[coveralls-image]: https://img.shields.io/coveralls/macacajs/dom-event-simulate.svg
 [coveralls-url]: https://coveralls.io/r/macacajs/dom-event-simulate?branch=master
-[node-image]: https://img.shields.io/badge/node.js-%3E=_8-green.svg?style=flat-square
+[node-image]: https://img.shields.io/badge/node.js-%3E=_8-green.svg
 [node-url]: http://nodejs.org/download/
-[download-image]: https://img.shields.io/npm/dm/dom-event-simulate.svg?style=flat-square
+[download-image]: https://img.shields.io/npm/dm/dom-event-simulate.svg
 [download-url]: https://npmjs.org/package/dom-event-simulate
 
 > simulate user interaction with DOM events.
