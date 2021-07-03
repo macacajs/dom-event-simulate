@@ -1,6 +1,7 @@
 # dom-event-simulate
 
 [![NPM version][npm-image]][npm-url]
+[![Package quality][quality-image]][quality-url]
 [![build status][travis-image]][travis-url]
 [![Test coverage][coveralls-image]][coveralls-url]
 [![node version][node-image]][node-url]
@@ -8,6 +9,8 @@
 
 [npm-image]: https://img.shields.io/npm/v/dom-event-simulate.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/dom-event-simulate
+[quality-image]: https://packagequality.com/shield/dom-event-simulate.svg
+[quality-url]: https://packagequality.com/#?package=dom-event-simulate
 [travis-image]: https://img.shields.io/travis/macacajs/dom-event-simulate.svg?style=flat-square
 [travis-url]: https://travis-ci.org/macacajs/dom-event-simulate
 [coveralls-image]: https://img.shields.io/coveralls/macacajs/dom-event-simulate.svg?style=flat-square
