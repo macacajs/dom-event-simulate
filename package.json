@@ -6,6 +6,9 @@
     "dom",
     "event"
   ],
+  "files": [
+    "lib/**/*.js"
+  ],
   "main": "lib/dom-event-simulate.js",
   "repository": {
     "type": "git",
